@@ -7,14 +7,17 @@
 // let n2 = 'Ron Whisley'
 // let n3 = 'Hermione Granger'
 
-// let n1 = 'Harry..Potter'
-// let n2 = 'Ron---Whisley'
-// let n3 = 'Hermione__Granger'
+// function name () {
+//     let n1 = 'Harry..Potter'
+//     let n2 = 'Ron---Whisley'
+//     let n3 = 'Hermione__Granger'
 //
-// let replace1 = n1.replace('..',' ')
-// let replace2 = n2.replace('---',' ')
-// let replace3 = n3.replace('__',' ')
-// console.log(replace1,replace2,replace3)
+//     let replace1 = n1.replace('..', ' ')
+//     let replace2 = n2.replace('---', ' ')
+//     let replace3 = n3.replace('__', ' ')
+//     console.log(replace1, replace2, replace3)
+// }
+// name();
 
 // - створити функцію, яка генерує масив рандомних числових цілих значень в діапазоні від 0 до 100.
 
@@ -30,7 +33,6 @@
 //     let arr = [];
 //     for (let i = 0; i < time; i++) {
 //         arr.push(Math.round(Math.random()*max))
-//         arr.sort();
 //         console.log(arr)
 //     }
 // }
@@ -53,34 +55,52 @@
 // }
 // random(100,3);
 
-// - створити масив рандомних цілих числових значень (або згенерувати, за допомоги попередньої функції) . за допомоги map та колбеку перетворити всі об'єкти в масиві на стрінгові.
+// - створити масив рандомних цілих числових значень
+// (або згенерувати, за допомоги попередньої функції) .
+// за допомоги map та колбеку перетворити всі об'єкти в масиві
+// на стрінгові.
 
 // let random = function (max,time) {
 //     let arr = [];
+//     let map;
 //     for (let i = 0; i < time; i++) {
 //         arr.push(Math.round(Math.random()*max))
 //         arr.sort();
 //         let map = arr.map(value => {
 //             return arr + '';
 //         })
-//         console.log(map[time-1])
 //     }
+//     console.log(map)
 // }
 // random(100,3);
+
+let arr = [21,54,12];
+
+function  map (i) {
+    return i.map(
+        function (number) {
+        return number.toString();
+    })
+}
+function sort (a) {
+    return a.sort();
+}
+
+console.log((map(sort(arr))))
 
 // - створити функцію sortNums(direction), яка прймає масив чисел, та сортує його від більшого до меньшого, або навпаки в залежності від значення аргументу direction.
 // let nums = [11,21,3];
 // sortNums('ascending') // [3,11,21]
 // sortNums('descending') // [21,11,3]
 
-function sortNums(numbers,direction) {
-    if (direction === 'ascending') {
-        return numbers.sort((a, b) => a - b)}
-        else if (direction === 'descending'){
-        return numbers.sort((a, b) => b - a)
-        }
-}
-sortNums([3,12,32],'descending') // [21,11,3]
+// function sortNums(numbers,direction) {
+//     if (direction === 'ascending') {
+//         return numbers.sort((a, b) => a - b)}
+//         else if (direction === 'descending'){
+//         return numbers.sort((a, b) => b - a)
+//         }
+// }
+// sortNums([3,12,32],'descending') // [21,11,3]
 
 // - є масив
 // let coursesAndDurationArray = [
