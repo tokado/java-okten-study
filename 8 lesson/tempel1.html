@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="main">
+    <div id="rules" class = 'rule'>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div>fldkgjhfdjkgfdkfldg</div>
+    <div>fldkgjhfdjkgfdkfldg</div>
+    <div>fldkgjhfdjkgfdkfldg</div>
+    <div>fldkgjhfdjkgfdkfldg</div>
+</div>
+<p id ='content'> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, aut corporis facere harum,
+    inventore labore modi natus nesciunt nostrum nulla officiis sapiente suscipit veniam voluptatibus voluptatum. Distinctio maxime provident rem.</p>
+<script>
+  // Візьміть файл template1.html, підключіть до нього скрипт, і працюйте в ньому!
+  // - Напишіть код,  який за допомоги document.getElementById або document.getElementsByClassName або document.getElementsByTagName :
+  // -- отримує текст з параграфа з id "content"
+  // -- отримує текст з блоку з id "rules"
+  // -- замініть текст параграфа з id 'content' на будь-який інший
+  // -- замініть текст параграфа з id 'rules' на будь-який інший
+  // -- змініть кожному елементу колір фону на червоний
+  // -- змініть кожному елементу колір тексту на синій
+  // -- отримати весь список класів елемента з id=rules і вивести їх в console.log
+  // -- поміняти колір тексту у всіх елементів fc_rules на червоний
+
+  let rules = document.getElementById('rules')
+  let rule = document.getElementsByClassName('main')
+  let r = rule[0]
+  console.log(rules)
+  rules.innerText = 'гртоапждлавп';
+  rules.style.background = 'red';
+  console.log(r.children)
+  for (const rElement of r.children) {
+      rElement.style.color = 'red'
+      console.log(rElement)
+  }
+
+  let content = document.getElementById('content')
+  console.log(content)
+  content.innerText = "fgfdfgdgfdfdg";
+  content.style.background = 'blue';
+
+
+  
+</script>
+</body>
+</html>
