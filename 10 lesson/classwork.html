@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .firstWork {
+        width: 100px;
+        height: 100px;
+        background: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: azure;
+    }
+</style>
+<div class="firstWork" id="first"> text</div>
+<button class="but" id="but">text</button>
+<form id='age'>
+    <input type="text" name="age2">
+    <button>Age</button>
+</form>
+<script>
+    // - Создать произвольный елемент с id = text.  Используя JavaScript, сделайте так, чтобы при клике на кнопку исчезал элемент с id="text".
+
+   // let first = document.getElementById('first');
+   // first.onclick = function () {
+   //     first.style.display = 'none';
+   // }
+
+    //     - Создайте кнопку, при клике на которую, она будет скрывать сама себя.
+
+    // let but = document.getElementById('but');
+    // but.onclick = function () {
+    //     but.style.display = 'none';
+    // }
+
+    // - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік
+    //  чи меньше він ніж 18, та повідомити про це користувача
+
+    // let age = document.forms.age;
+    // age.onsubmit = function (e) {
+    //     e.preventDefault()
+    //     let num = Number(this.value)
+    //     console.log(typeof num)
+    //     console.log(this.value)
+    //     if (num > 18) {
+    //         console.log('Good')
+    //     }
+    //      else {
+    //          console.log('Bed')
+    //     }
+    //
+    // }
+
+
+    // - Создайте меню, которое раскрывается/сворачивается при клике
+
+     // let first = document.getElementById('first');
+     // let but = document.getElementById('but')
+     // first.onclick = function () {
+     //    first.style.width = '100%';
+     //    first.innerHTML =`<a href="#">Меню</a>`;
+     //     first.onclick = function () {
+     //         first.style.width = '100px';
+     //         first.innerHTML = 'text';
+     //     }
+     // }
+
+    // - Создать список комментариев , пример объекта коментария - {title : 'lorem', body:'lorem ipsum dolo sit ameti'}.
+    //     Вывести список комментариев в документ, каждый в своем блоке.
+    //     Добавьте каждому комментарию по кнопке для сворачивания его body.
+
+    let list = {title : 'lorem', body:'lorem ipsum dolo sit ameti'};
+    console.log(list)
+
+</script>
+</body>
+</html>
