@@ -19,6 +19,9 @@
         align-items: center;
         color: azure;
     }
+    .com {
+        height: 0;
+    }
 </style>
 <div class="firstWork" id="first"> text</div>
 <button class="but" id="but">text</button>
@@ -26,6 +29,8 @@
     <input type="text" name="age2">
     <button>Age</button>
 </form>
+<button id="fir">First</button>
+<p>
 <script>
     // - Создать произвольный елемент с id = text.  Используя JavaScript, сделайте так, чтобы при клике на кнопку исчезал элемент с id="text".
 
@@ -62,23 +67,45 @@
 
     // - Создайте меню, которое раскрывается/сворачивается при клике
 
-     // let first = document.getElementById('first');
-     // let but = document.getElementById('but')
-     // first.onclick = function () {
-     //    first.style.width = '100%';
-     //    first.innerHTML =`<a href="#">Меню</a>`;
-     //     first.onclick = function () {
-     //         first.style.width = '100px';
-     //         first.innerHTML = 'text';
-     //     }
-     // }
+     let first = document.getElementById('first');
+     let but = document.getElementById('but')
+     first.onclick = function () {
+        first.style.width = '100%';
+        first.innerHTML =`<a href="#">Меню</a>`;
+         first.onclick = function () {
+             first.style.width = '100px';
+             first.innerHTML = 'text';
+         }
+     }
 
     // - Создать список комментариев , пример объекта коментария - {title : 'lorem', body:'lorem ipsum dolo sit ameti'}.
     //     Вывести список комментариев в документ, каждый в своем блоке.
     //     Добавьте каждому комментарию по кнопке для сворачивания его body.
 
-    let list = {title : 'lorem', body:'lorem ipsum dolo sit ameti'};
-    console.log(list)
+    let comments = [
+        {name: 'Максим', body: 'Вчи English'},
+        {name: 'Іван', body: 'Досить сидіти, вже пізно'},
+        {name: 'Льоня', body: 'Зупка, стине, ходи додому'},
+        {name: 'Іра', body: 'Воно, тобі треба?'},
+    ];
+    for (const comment of comments) {
+        let h2 = document.createElement('h2')
+        h2.innerText = comment.name;
+        let div = document.createElement('div')
+        div.classList.add('main')
+        div.innerText = comment.body;
+        let btn = document.createElement('button')
+        btn.innerHTML = 'сховати'
+        btn.classList.add('btn')
+        btn.onclick = function () {
+            div.style.display = 'none'
+            h2.style.display = 'none'
+        }
+
+        document.body.append(h2,div,btn);
+
+    }
+
 
 </script>
 </body>
