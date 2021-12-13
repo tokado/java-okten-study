@@ -14,6 +14,7 @@ fetch(`https://jsonplaceholder.typicode.com/posts?page=5`)
             let main = document.createElement('div')
             main.classList.add('post')
             let h1 = document.createElement("h1")
+            h1.classList.add('post')
             h1.innerText = userElement.title;
             main.innerText = userElement.body;
             document.body.append(h1,main)
