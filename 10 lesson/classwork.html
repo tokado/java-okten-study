@@ -26,7 +26,7 @@
 <div class="firstWork" id="first"> text</div>
 <button class="but" id="but">text</button>
 <form id='age'>
-    <input type="text" name="age2">
+    <input id="ageU" type="text" name="age2">
     <button>Age</button>
 </form>
 <button id="fir">First</button>
@@ -49,20 +49,21 @@
     // - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік
     //  чи меньше він ніж 18, та повідомити про це користувача
 
-    // let age = document.forms.age;
-    // age.onsubmit = function (e) {
-    //     e.preventDefault()
-    //     let num = Number(this.value)
-    //     console.log(typeof num)
-    //     console.log(this.value)
-    //     if (num > 18) {
-    //         console.log('Good')
-    //     }
-    //      else {
-    //          console.log('Bed')
-    //     }
-    //
-    // }
+    let age = document.forms.age;
+    let ageU = document.getElementById('ageU')
+    age.onsubmit = function (e) {
+        e.preventDefault()
+        let num = Number(this.ageU.value)
+        console.log(typeof num)
+        console.log(this.ageU.value)
+        if (num > 18) {
+            console.log('Good')
+        }
+         else {
+             console.log('Bed')
+        }
+
+    }
 
 
     // - Создайте меню, которое раскрывается/сворачивается при клике

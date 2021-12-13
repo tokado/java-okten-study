@@ -5,41 +5,100 @@
     <title>Title</title>
 </head>
 <body>
-<form id="form1">
-    <input type="text">
-    <button>text</button>
+<div id="div1">
+    <form id="form1">
+        <input id="inp1" type="text">
+    </form>
+    <button id="btn1">text</button>
+</div>
+<div id="div2">
+    <form id="form2">
+        <input id="inp2" type="number">
+    </form>
+    <button id="btn2">text</button>
+</div>
+
+<form id="table">
+    <input id="rows">
+    <input id="number">
+    <input id="info">
+    <button id="button2">fgdgdfgdfg</button>
 </form>
-<form id="form2">
-    <input type="number">
-    <button>text</button>
+<form id="bed">
+    <input id="info2">
+    <button id="button3">Відправити</button>
 </form>
 <script>
-   //  - створити 2 форми  по 2 інпути в кожній. ствоирити кнопку при кліку на яку считується та виводиться на консоль інформація з цих 2х форм.
-   // Кнопка повинна лежати за межами форм (Щоб ьуникнути  перезавантаження сторінки)
-   // Доступ до інпутів через Forms API. Отже дайте формі та інпутам всі необхідні атрибути.
+    //  - створити 2 форми  по 2 інпути в кожній. ствоирити кнопку при кліку на яку считується та виводиться на консоль інформація з цих 2х форм.
+    // Кнопка повинна лежати за межами форм (Щоб ьуникнути  перезавантаження сторінки)
+    // Доступ до інпутів через Forms API. Отже дайте формі та інпутам всі необхідні атрибути.
+// document.getElementById('btn1').onclick = function () {
+//     let form1 = document.forms.form1.inp1.value;
+//     let form2 = document.forms.form2.inp2.value;
+//     console.log(form1, form2)
+// }
 
-   let form1 = document.getElementById('form1')
-   let form2 = document.getElementById('form2')
-   console.log(form1)
-   console.log(form2)
+    // - Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
+    // При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
+    // (Додатковачастина для завдання)
 
-   // - Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
-   // При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
-   // (Додатковачастина для завдання)
-   //
-   //
-   // - Сворити масив не цензцрних слів.
-   // Сворити інпут текстового типу.
-   // Якщо людина вводить слово і воно міститься в масиві не цензурних слів
-   // кинути алерт з попередженням.
-   // Перевірку робити при натисканні на кнопку
-   //
-   //
-   // - Сворити масив не цензцрних слів.
-   // Сворити інпут текстового типу.
-   // Потрібно перевіряти чи не містить ціле речення в собі погані слова.
-   // Кинути алерт з попередженням у випадку якщо містить.
-   // Перевірку робити при натисканні на кнопку
+    let form = document.forms['table']
+    let button2 = document.getElementById('button2')
+    form.onsubmit = function (e) {
+        e.preventDefault()
+        let rows = +form.rows.value;
+        let number = +form.number.value;
+        let info = form.info.value;
+        console.log(rows,number,info)
+
+        let table2 = document.createElement('table')
+
+    for (let i = 0; i < rows; i++) {
+        let tr = document.createElement('tr')
+        for (let j = 0; j < number; j++) {
+            let td = document.createElement('td')
+            td.innerText = info;
+            tr.append(td);
+        }
+    table2.append(tr);
+    }
+    document.body.append(table2)
+}
+    // - Сворити масив не цензцрних слів.
+    // Сворити інпут текстового типу.
+    // Якщо людина вводить слово і воно міститься в масиві не цензурних слів
+    // кинути алерт з попередженням.
+    // Перевірку робити при натисканні на кнопку
+
+    // let btn = document.getElementById('button3')
+    // let b = ["жмих","окунь","свиня"]
+    // btn.onclick = function (e) {
+    //     e.preventDefault()
+    //     let input_info = document.getElementById('info2').value;
+    //     for (const eb of b) {
+    //         if (input_info === eb) {
+    //             alert('Bed')
+    //         }
+    //     }
+    // }
+
+    // - Сворити масив не цензцрних слів.
+    // Сворити інпут текстового типу.
+    // Потрібно перевіряти чи не містить ціле речення в собі погані слова.
+    // Кинути алерт з попередженням у випадку якщо містить.
+    // Перевірку робити при натисканні на кнопку
+
+    let btn = document.getElementById('button3')
+    let b = ["жмих","окунь","свиня"]
+    btn.onclick = function (e) {
+        e.preventDefault()
+        let input_info = document.getElementById('info2').value;
+        for (const eb of b) {
+            if (input_info.includes(eb)) {
+                alert('Bed')
+            }
+        }
+    }
 </script>
 </body>
 </html>
