@@ -11,15 +11,33 @@
         fetch(`https://jsonplaceholder.typicode.com/users`)
             .then(value => value.json())
             .then(value => {
-
                 for (const userElement of value) {
                     if (userElement.id == params.get(`id`)) {
                         let mainDiv = document.createElement('div')
-                        mainDiv.innerHTML = userElement.username + `<p>` + userElement.email + `<p>` + userElement.address.street + `<p>` + userElement.phone;
+                        mainDiv.innerHTML = userElement.name +
+                            `<p>` + userElement.username +
+                            `<p>` + userElement.email +
+                            `<p>` + userElement.address.street +
+                            `<p>`+ userElement.address.street +
+                            `<p>`+ userElement.address.suite +
+                            `<p>`+ userElement.address.city +
+                            `<p>`+ userElement.address.zipcode +
+                            `<p>`+ userElement.address.geo.lat +
+                            `<p>`+ userElement.address.geo.lat +
+                            `<p>`+ userElement.phone +
+                            `<p>`+ userElement.website +
+                            `<p>`+ userElement.company.name +
+                            `<p>`+ userElement.company.catchPhrase +
+                            `<p>`+ userElement.company.bs;
                         document.body.append(mainDiv)
+                        let btn = document.createElement('button')
+                        btn.innerText = 'post of current user';
+                        btn.onclick = function () {
+                            location.href = `post-details.html?id=${userElement.id}`;
+                        }
+                        document.body.append(btn)
                     }
                 }
-
             })
 
 

@@ -5,6 +5,30 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+    let params = new URLSearchParams(document.location.search);
+    console.log(params.get(`id`))
+    fetch(`https://jsonplaceholder.typicode.com/users`)
+        .then(value => value.json())
+        .then(value => {
+            for (const userElement of value) {
+                if (userElement.id == params.get(`id`)) {
+                    fetch(`https://jsonplaceholder.typicode.com/users/${userElement.id}/posts`)
+                        .then(value => value.json())
+                        .then(value => {
+                            let user = value
+                            console.log(value)
+                            for (const userElement of user) {
+                                let mainDiv = document.createElement('div')
+                                mainDiv.innerHTML = userElement.title + `<p>`;
+                                document.body.append(mainDiv)
+                            }
+                        })
+                }
+            }
+        })
 
+
+</script>
 </body>
 </html>
