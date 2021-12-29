@@ -12,7 +12,7 @@
         .then(value => value.json())
         .then(value => {
             for (const userElement of value) {
-                if (userElement.userId == params.get(`userId`)) {
+                if (userElement.id == params.get(`id`)) {
                     fetch(`https://jsonplaceholder.typicode.com/users/${userElement.id}/posts`)
                         .then(value => value.json())
                         .then(value => {
@@ -20,13 +20,19 @@
                             console.log(value)
                             for (const userElement of user) {
                                 let mainDiv = document.createElement('div')
-                                mainDiv.innerHTML = userElement.id + `<p>` + userElement.title + `<p>` + userElement.body;
-                                document.body.append(mainDiv)
+                                mainDiv.innerHTML = userElement.title + `<p>`;
+                                let btn = document.createElement('button')
+                                btn.innerText = 'information';
+                                btn.onclick = function () {
+                                    location.href = `post-details.html?id=${userElement.id}`;
+                                }
+                                document.body.append(mainDiv, btn)
                             }
                         })
                 }
             }
         })
+
 
 </script>
 </body>
