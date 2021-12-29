@@ -19,11 +19,12 @@
                 let btn = document.createElement('button')
                 btn.innerText = 'information';
                 btn.onclick = function () {
-                    location.href = 'user-details.html'
+                    location.href = `user-details.html?id=${userElement.id}`
                 }
                 document.body.append(h2,mainDiv,btn)
             }
         })
 </script>
+
 </body>
 </html>

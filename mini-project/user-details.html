@@ -6,15 +6,28 @@
 </head>
 <body>
 <script>
-    fetch(`https://jsonplaceholder.typicode.com/users`)
-        .then(value => value.json())
-        .then(value => {
-            let user = value
-            console.log(value)
-                let mainDiv = document.createElement('div')
-                mainDiv.innerHTML = user.username + `<p>` + user.email + `<p>` + user.address.street + `<p>` + user.phone;
-                document.body.append(mainDiv)
-        })
+    let params = new URLSearchParams(document.location.search);
+    console.log(params.get(`id`))
+        fetch(`https://jsonplaceholder.typicode.com/users`)
+            .then(value => value.json())
+            .then(value => {
+
+                for (const userElement of value) {
+                    if (userElement.id == params.get(`id`)) {
+                        let mainDiv = document.createElement('div')
+                        mainDiv.innerHTML = userElement.username + `<p>` + userElement.email + `<p>` + userElement.address.street + `<p>` + userElement.phone;
+                        document.body.append(mainDiv)
+                    }
+                }
+
+            })
+
+
+
+
+
+
+
 </script>
 </body>
 </html>
