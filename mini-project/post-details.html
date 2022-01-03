@@ -12,7 +12,7 @@
         .then(value => value.json())
         .then(value => {
             for (const userElement of value) {
-                if (userElement.userId == params.get(`userId`)) {
+                if (userElement.id == params.get(`id`)) {
                     fetch(`https://jsonplaceholder.typicode.com/users/${userElement.id}/posts`)
                         .then(value => value.json())
                         .then(value => {
